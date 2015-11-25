@@ -285,34 +285,26 @@ the run unique and for retrieval purposes.
 Now that we have all the set of images with a string characterizing
 their parameters as a tittle we can access them systematically. The
 classical way of doing this will be construct a GUI that just controls
-the parameters and extracts the image with the unique string. As is well know even if Python provides tools to deal efficiently with a graphical programming courses it still involves a lot of boiler plate and it involves dependencies and developing time that is usually not available. 
-Fortunately Python provides an even faster way of doing the same tasks that fits most of the scientific use cases at hand. We can use the \textbf{Ipython.widgets} module in order to create sliders for
-those parameters or a combination of them. In short using the ipython
+the parameters and extracts the image with the unique string. It is well known that despite Python simplicity programming \textbf{graphical user interfaces} (GUI) still involves a lot of effort, boiler plate and usually increase the complexity of your  dependencies, all of this together requires developing time that is usually not available in a scientific programming environment.  
+
+Fortunately Python provides an even faster way of doing the same tasks that fits most of the scientific use cases at hand. We can use the \textbf{Ipython.widgets} module in order to create sliders for some parameters of interest or a combination of them. In short using the ipython
 notebook we have created and interactive environment that retrieves the
 image that we need and displays it automatically allowing a smooth
-exploration of parameters without the hassle of building a GUI to
-achieve this.
+exploration of parameters without the hassle of building a GUI to achieve the same end result.
 
-\subsection{Final Discussion.}\label{final-discussion.}
+\section{Final Discussion.}\label{final-discussion.}
 
 We have describe here the process of building a parameter exploration
 library. The tools that have helped us accomplishing this goal are the
 class oriented capabilities of the matplotlib library and the
 interactivity added to ipython notebook with the widgets package. With
-those two and decoupling the generation from the visualization of our
-data we can construct complex routines, let them running and study the
-results later in an interactive way.
+those two and decoupling the data generation from the visualization part of our
+pipeline we have facilitated the construction of complex routines. Furthermore we can run and study our results systematically later without memory constrains.
 
 A problem with this approach is that the images that we store take quite
 a bit space and are not reproducible. That is, the step from data to
 image is irreversible. A further step ahead will be to store the data
-instead of the images as the end results of our pipeline. A project that
-looks very interesting to us in that regard is the \texttt{h5py}
-project. The project provides an API to write and read to the hdf5
-format in a clean and pythonic way. Using this tool we could store all
-the homogeneous data produced with our simulations and store the
-parameters as attributes in the data model of hdf5. We hope to build
-that for our next step.
+instead of the images as the end results of our pipeline. In order to accomplish this we store most of the important data matrices generated in the process in the \textbf{HDF} format. In order to this we profit from the capabilities provided by the Python library \textbf{h5py}. With this scheme we have been able to store all the homogeneous data produces in our simulations and then recover it down the line for further analysis. With this we have achieved to store our data in a persistent and standardized format reducing drastically the hard drive footprint of our simulations. Furthermore the h5py library allow us to integrate all of this in our code in Python friendly way consistent with our previous framework.
 
 
 \bibliographystyle{plainnat}

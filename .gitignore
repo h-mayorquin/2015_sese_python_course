@@ -67,4 +67,5 @@ target/
 *.fls
 *.out
 *.toc
-
+*.synctex.gz
+*.pdf
